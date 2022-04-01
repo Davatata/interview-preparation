@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataStructures.Arrays
 {
@@ -14,9 +10,9 @@ namespace DataStructures.Arrays
             var j = nums.Length - 1;
             var ans = new int[nums.Length];
 
-            for(var max = j; max >= 0; max--)
+            for (var max = j; max >= 0; max--)
             {
-                if( Math.Abs(nums[i]) >= Math.Abs(nums[j]) )
+                if (Math.Abs(nums[i]) >= Math.Abs(nums[j]))
                 {
                     ans[max] = nums[i] * nums[i];
                     i++;
