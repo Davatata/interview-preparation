@@ -6,7 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Arrays\" />
     <Folder Include="LinkedLists\" />
     <Folder Include="Maps\" />
     <Folder Include="BinaryTrees\" />
