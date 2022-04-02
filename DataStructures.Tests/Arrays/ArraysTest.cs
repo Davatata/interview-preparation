@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace DataStructures.Tests
 {
     [TestClass]
-    public class ArraysTest
+    public class ArraysTests
     {
         [TestMethod]
         public void SortedSquares_Test1()
