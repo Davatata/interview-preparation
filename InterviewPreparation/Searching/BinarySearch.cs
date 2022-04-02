@@ -27,5 +27,32 @@ namespace DataStructures.Searching
             return -1;
         }
 
+        public static int MySqrt(int x)
+        {
+            int low = 0;
+            int high = 50000;
+
+            if (x < 50000)
+                high = x;
+
+            while (low <= high)
+            {
+                int mid = low + (high - low) / 2;
+                uint sqrd = (uint)mid * (uint)mid;
+                if (sqrd == x)
+                    return mid;
+                else if (sqrd < x)
+                {
+                    if (low == high)
+                        return mid;
+                    low = mid + 1;
+                }
+                else
+                    high = mid - 1;
+            }
+
+            return high;
+        }
+
     }
 }

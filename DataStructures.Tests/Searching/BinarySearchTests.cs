@@ -30,5 +30,27 @@ namespace DataStructures.Searching.Tests
 
             Assert.AreEqual(expected, result);
         }
+
+        [TestMethod()]
+        public void MySqrt_ShouldReturn_2()
+        {
+            var input = 4;
+            var expected = 2;
+
+            var result = BinarySearch.MySqrt(input);
+
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod()]
+        public void MySqrt_ShouldReturn_46339()
+        {
+            var input = 2147395599;
+            var expected = 46339;
+
+            var result = BinarySearch.MySqrt(input);
+
+            Assert.AreEqual(expected, result);
+        }
     }
 }
