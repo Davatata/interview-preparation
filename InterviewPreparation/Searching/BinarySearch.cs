@@ -38,6 +38,7 @@ namespace DataStructures.Searching
             while (low <= high)
             {
                 int mid = low + (high - low) / 2;
+                // To avoid int overflow
                 uint sqrd = (uint)mid * (uint)mid;
                 if (sqrd == x)
                     return mid;
