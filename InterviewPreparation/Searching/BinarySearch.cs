@@ -8,8 +8,13 @@ namespace DataStructures.Searching
 {
     public static class BinarySearch
     {
-        public static int Search(int [] nums, int target)
+        public static int Template1(int[] nums, int target)
         {
+            if (nums == null)
+            {
+                return -1;
+            }
+
             int low = 0;
             int high = nums.Length - 1;
 
@@ -23,6 +28,62 @@ namespace DataStructures.Searching
                 else
                     low = mid + 1;
             }
+
+            return -1;
+        }
+
+        public static int Template2(int[] nums, int target)
+        {
+            if (nums == null)
+            {
+                return -1;
+            }
+
+            int low = 0;
+            int high = nums.Length;
+
+            while(low < high)
+            {
+                int mid = low + (high - low) / 2;
+
+                if (nums[mid] == target)
+                    return mid;
+                else if(nums[mid] < target)
+                    low = mid + 1;
+                else
+                    high = mid;
+            }
+
+            if (low != nums.Length && nums[low] == target)
+                return low;
+
+            return -1;
+        }
+
+        public static int Template3(int[] nums, int target)
+        {
+            if (nums == null)
+            {
+                return -1;
+            }
+
+            int low = 0;
+            int high = nums.Length - 1;
+
+            while (low + 1 < high)
+            {
+                int mid = low + (high - low) / 2;
+
+                if (nums[mid] == target)
+                    return mid;
+                else if (nums[mid] < target)
+                    low = mid;
+                else
+                    high = mid;
+            }
+
+            if (nums[low] == target) return low;
+            if (nums[high] == target) return high;
 
             return -1;
         }

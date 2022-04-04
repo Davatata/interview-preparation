@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using DataStructures.Searching;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace DataStructures.Searching.Tests
 {
@@ -13,7 +14,7 @@ namespace DataStructures.Searching.Tests
 
             var expected = 4;
 
-            var result = BinarySearch.Search(input, target);
+            var result = BinarySearch.Template1(input, target);
 
             Assert.AreEqual(expected, result);
         }
@@ -26,7 +27,7 @@ namespace DataStructures.Searching.Tests
 
             var expected = -1;
 
-            var result = BinarySearch.Search(input, target);
+            var result = BinarySearch.Template1(input, target);
 
             Assert.AreEqual(expected, result);
         }
