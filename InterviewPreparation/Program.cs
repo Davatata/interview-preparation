@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataStructures.LinkedLists;
+using System;
 
 namespace InterviewPreparation
 {
@@ -6,7 +7,11 @@ namespace InterviewPreparation
     {
         static void Main(string[] args)
         {
-            
+            var list = new LinkedList<int>
+            {
+                Head = new Node<int>(4)
+            };
+
         }
     }
 }

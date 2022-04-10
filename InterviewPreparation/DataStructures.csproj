@@ -6,14 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="LinkedLists\" />
     <Folder Include="Maps\" />
     <Folder Include="BinaryTrees\" />
-    <Folder Include="Heaps\" />
     <Folder Include="Graphs\" />
     <Folder Include="Sets\" />
-    <Folder Include="Queues\" />
-    <Folder Include="Stacks\" />
   </ItemGroup>
 
 </Project>
