@@ -144,5 +144,27 @@ namespace DataStructures.Graphs.Tests
         {
             Assert.IsTrue(graphU.HasPathBFS(x, y));
         }
+
+        [DataTestMethod()]
+        [DataRow(1, 7)]
+        [DataRow(1, 8)]
+        [DataRow(3, 8)]
+        [DataRow(4, 6)]
+        [DataRow(2, 8)]
+        public void HasPathDFS_ShouldHavePathFrom_a_To_b(int a, int b)
+        {
+            Assert.IsTrue(graphU.HasPathDFS(a, b));
+        }
+
+        [DataTestMethod()]
+        [DataRow(1, 7)]
+        [DataRow(1, 8)]
+        [DataRow(3, 8)]
+        [DataRow(4, 6)]
+        [DataRow(2, 8)]
+        public void HasPathBFS_ShouldHavePathFrom_a_To_b(int a, int b)
+        {
+            Assert.IsTrue(graphU.HasPathBFS(a, b));
+        }
     }
 }

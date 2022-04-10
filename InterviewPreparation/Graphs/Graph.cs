@@ -50,7 +50,7 @@ namespace DataStructures.Graphs
                 return false;
 
             visited.Add(source.Id);
-            if (source == destination)
+            if (source.Id == destination.Id)
                 return true;
 
             foreach (Node child in source.Adjacent)
