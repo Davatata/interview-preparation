@@ -8,7 +8,6 @@
   <ItemGroup>
     <Folder Include="Maps\" />
     <Folder Include="BinaryTrees\" />
-    <Folder Include="Graphs\" />
     <Folder Include="Sets\" />
   </ItemGroup>
 
