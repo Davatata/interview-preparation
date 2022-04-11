@@ -21,6 +21,11 @@ namespace DataStructures.Graphs
             return nodeLookup[id];
         }
 
+        public bool ContainsNode(int id)
+        {
+            return nodeLookup.ContainsKey(id);
+        }
+
         public void AddEdgeDirect(int source, int destination)
         {
             Node s = GetNode(source);
