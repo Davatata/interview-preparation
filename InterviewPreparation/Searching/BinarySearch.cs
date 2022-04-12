@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DataStructures.Searching
+﻿namespace DataStructures.Searching
 {
     public static class BinarySearch
     {
@@ -42,13 +36,13 @@ namespace DataStructures.Searching
             int low = 0;
             int high = nums.Length;
 
-            while(low < high)
+            while (low < high)
             {
                 int mid = low + (high - low) / 2;
 
                 if (nums[mid] == target)
                     return mid;
-                else if(nums[mid] < target)
+                else if (nums[mid] < target)
                     low = mid + 1;
                 else
                     high = mid;

@@ -1,4 +1,5 @@
-﻿using DataStructures.LinkedLists;
+﻿using DataStructures.BinaryTrees;
+using DataStructures.LinkedLists;
 using System;
 using System.Collections.Generic;
 
@@ -9,21 +10,18 @@ namespace InterviewPreparation
 
         static void Main(string[] args)
         {
-            var node1 = new Node<int>(1);
-            var node2 = new Node<int>(2);
+            // ============= BST ============
 
-            var list = new List<Node<int>>{ node1, node2 };
+            var node10 = new BinaryTree.Node(10);
+            node10.Insert(5);
+            node10.Insert(8);
+            node10.Insert(15);
 
-            for(var i = 3; i < 10; i++)
-            {
-                AddNode(i, list);
-            }
-            Console.WriteLine(list);
+            // Prints 5 8 10 15
+            node10.PrintInOrder();
+
+            // ============= BST ============
         }
 
-        public static void AddNode(int x, List<Node<int>> list)
-        {
-            list.Add(new Node<int>(x));
-        }
     }
 }
