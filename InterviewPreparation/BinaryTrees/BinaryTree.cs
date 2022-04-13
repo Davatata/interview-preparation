@@ -23,16 +23,23 @@ namespace DataStructures.BinaryTrees
                 if (value <= Data)
                 {
                     if (Left == null)
+                    {
                         Left = new Node(value);
+                    }
                     else
+                    {
                         Left.Insert(value);
-                }
-                else
+                    }
+                } else
                 {
                     if (Right == null)
+                    {
                         Right = new Node(value);
+                    }
                     else
+                    {
                         Right.Insert(value);
+                    }
                 }
             }
 
@@ -77,6 +84,32 @@ namespace DataStructures.BinaryTrees
                 {
                     Right.PrintInOrder();
                 }
+            }
+
+            public void PrintPreOrder(string spacing = "")
+            {
+                Console.WriteLine(spacing + Data);
+                if (Left != null)
+                {
+                    Left.PrintPreOrder(spacing + " ");
+                }
+                if (Right != null)
+                {
+                    Right.PrintPreOrder(spacing + " ");
+                }
+            }
+
+            public void PrintPostOrder()
+            {
+                if (Left != null)
+                {
+                    Left.PrintPostOrder();
+                }
+                if (Right != null)
+                {
+                    Right.PrintPostOrder();
+                }
+                Console.Write(Data + " ");
             }
         }
     }
