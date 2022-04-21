@@ -1,5 +1,6 @@
 ﻿using DataStructures.BinaryTrees;
 using System;
+using System.Linq;
 
 namespace InterviewPreparation
 {
@@ -34,6 +35,14 @@ namespace InterviewPreparation
             Console.WriteLine();
 
             // ============= BST ============
+
+            var str = "hello";
+            var list = str.ToList();
+            list.Sort();
+            foreach (var ch in list)
+            {
+                Console.Write($"{ch} ");
+            }
         }
 
     }

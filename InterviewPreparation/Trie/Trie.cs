@@ -4,8 +4,7 @@ namespace DataStructures.Trie
 {
     public class Trie
     {
-
-        Node Root;
+        private readonly Node Root;
 
         class Node
         {
@@ -35,8 +34,7 @@ namespace DataStructures.Trie
                     var newNode = new Node();
                     node.Children.Add(letter, newNode);
                     node = newNode;
-                }
-                else
+                } else
                 {
                     node = node.Children[letter];
                 }
