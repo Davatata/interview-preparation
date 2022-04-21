@@ -34,6 +34,11 @@ namespace InterviewPreparation
             node10.PrintPostOrder();
             Console.WriteLine();
 
+            var tree = new BinaryTree();
+            Console.WriteLine("Top down Depth: " + tree.MaximumDepth_TopDown(node10));
+
+            Console.WriteLine("Bottom up Depth: " + tree.MaximumDepth_BottomUp(node10));
+
             // ============= BST ============
 
             var str = "hello";
