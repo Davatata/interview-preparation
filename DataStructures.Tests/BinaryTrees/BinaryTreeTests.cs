@@ -3,7 +3,7 @@ using static DataStructures.BinaryTrees.BinaryTree;
 
 namespace DataStructures.BinaryTrees.Tests
 {
-    [TestClass()]
+    [TestClass]
     public class BinaryTreeTests
     {
         BinaryTree Tree;
@@ -34,21 +34,21 @@ namespace DataStructures.BinaryTrees.Tests
              */
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void MaximumDepth_TopDownTest_ShouldBe4()
         {
             var answer = Tree.MaximumDepth_TopDown(Root);
             Assert.AreEqual(4, answer);
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void MaximumDepth_BottomUpTest_ShouldBe4()
         {
             var answer = Tree.MaximumDepth_BottomUp(Root);
             Assert.AreEqual(4, answer);
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void IsSymmetricTest_ShouldBeFalse()
         {
             var root = new Node(1);
@@ -70,7 +70,7 @@ namespace DataStructures.BinaryTrees.Tests
             Assert.IsFalse(answer);
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void IsSymmetricTest_ShouldBeTrue()
         {
             var root = new Node(1);
@@ -91,7 +91,7 @@ namespace DataStructures.BinaryTrees.Tests
             Assert.IsTrue(answer);
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void IsSymmetricTest_ShouldBeFalse2()
         {
             var root = new Node(5);
