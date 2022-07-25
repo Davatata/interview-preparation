@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DataStructures.BinaryTrees
+namespace DataStructures.Trees
 {
     public class BinaryTree
     {
@@ -182,17 +182,19 @@ namespace DataStructures.BinaryTrees
             if (root.Left == null && root.Right != null)
             {
                 nodeList.Add(101);
-            } else
+            }
+            else
             {
                 IsSymmetricHelper(root.Left, nodeList);
             }
-                
+
             nodeList.Add(root.Data);
-            
-            if ( root.Right == null && root.Left != null)
+
+            if (root.Right == null && root.Left != null)
             {
                 nodeList.Add(101);
-            } else
+            }
+            else
             {
                 IsSymmetricHelper(root.Right, nodeList);
             }

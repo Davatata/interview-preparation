@@ -1,4 +1,4 @@
-﻿using DataStructures.BinaryTrees;
+﻿using DataStructures.Trees;
 using System;
 using System.Linq;
 

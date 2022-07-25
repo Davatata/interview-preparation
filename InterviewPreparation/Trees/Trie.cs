@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DataStructures.Trie
+namespace DataStructures.Trees
 {
     public class Trie
     {
@@ -34,7 +34,8 @@ namespace DataStructures.Trie
                     var newNode = new Node();
                     node.Children.Add(letter, newNode);
                     node = newNode;
-                } else
+                }
+                else
                 {
                     node = node.Children[letter];
                 }

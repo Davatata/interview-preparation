@@ -1,5 +1,6 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using static DataStructures.BinaryTrees.BinaryTree;
+﻿using DataStructures.Trees;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using static DataStructures.Trees.BinaryTree;
 
 namespace DataStructures.BinaryTrees.Tests
 {
