@@ -64,14 +64,38 @@ namespace DataStructures.Heaps
             HeapifyUp();
         }
 
-        public void HeapifyDown()
-        {
-
-        }
 
         public void HeapifyUp()
         {
+            var index = Size - 1;
+            while (HasParent(index) && Parent(index) > Items[index])
+            {
+                Swap(GetParentIndex(index), index);
+                index = GetParentIndex(index);
+            }
+        }
 
+        public void HeapifyDown()
+        {
+            var index = 0;
+            while (HasLeftChild(index))
+            {
+                var smallerIndex = GetLeftChildIndex(index);
+                if (RightChild(index) < LeftChild(index))
+                {
+                    smallerIndex = GetLeftChildIndex(index);
+                }
+
+                if (Items[index] > Items[smallerIndex])
+                {
+                    Swap(index, smallerIndex);
+                    index = smallerIndex;
+                }
+                else
+                {
+                    break;
+                }
+            }
         }
     }
 }

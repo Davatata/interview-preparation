@@ -153,52 +153,89 @@ namespace DataStructures.Trees
 
         public bool IsSymmetric(Node root)
         {
-            if (root == null) { return false; }
-
-            var leftNodes = new List<int>();
-            var rightNodes = new List<int>();
-
-            // In order traversal of left and then right sub-trees.
-            IsSymmetricHelper(root.Left, leftNodes);
-            IsSymmetricHelper(root.Right, rightNodes);
-
-            if (leftNodes.Count != rightNodes.Count) { return false; }
-
-            for (int i = 0, j = leftNodes.Count - 1; i < leftNodes.Count && j >= 0; i++, j--)
-            {
-                if (leftNodes[i] != rightNodes[j])
-                {
-                    return false;
-                }
-            }
-
-            return true;
+            return IsSymmetricHelper(root.Left, root.Right);
         }
 
-        private void IsSymmetricHelper(Node root, List<int> nodeList)
+        public bool IsSymmetricHelper(Node p, Node q)
         {
-            if (root == null) { return; }
+            if (p == null && q == null)
+            {
+                return true;
+            }
+            if (p == null && q != null)
+            {
+                return false;
+            }
+            if (p != null && q == null)
+            {
+                return false;
+            }
+            if (p.Data != q.Data)
+            {
+                return false;
+            }
 
-            if (root.Left == null && root.Right != null)
-            {
-                nodeList.Add(101);
-            }
-            else
-            {
-                IsSymmetricHelper(root.Left, nodeList);
-            }
-
-            nodeList.Add(root.Data);
-
-            if (root.Right == null && root.Left != null)
-            {
-                nodeList.Add(101);
-            }
-            else
-            {
-                IsSymmetricHelper(root.Right, nodeList);
-            }
+            return IsSameTree(p.Left, q.Right) && IsSameTree(p.Right, q.Left);
         }
 
+        public bool IsSameTree(Node p, Node q)
+        {
+            if (p == null && q == null)
+            {
+                return true;
+            }
+            if (p == null && q != null)
+            {
+                return false;
+            }
+            if (p != null && q == null)
+            {
+                return false;
+            }
+            if (p.Data != q.Data)
+            {
+                return false;
+            }
+
+            return IsSameTree(p.Left, q.Left) && IsSameTree(p.Right, q.Right);
+        }
+
+        public static IList<int> RightSideView(Node root)
+        {
+            var result = new List<int>();
+
+            if (root == null)
+            {
+                return result;
+            }
+
+            // 1. go level by level and add right-most node to result
+            var queue = new Queue<Node>();
+            queue.Enqueue(root);
+            Node rightMost = null;
+
+            while (queue.Count > 0)
+            {
+                var qCount = queue.Count;
+
+                for (int i = 0; i < qCount; i++)
+                {
+                    var node = queue.Dequeue();
+                    rightMost = node;
+                    if (node.Left != null)
+                    {
+                        queue.Enqueue(node.Left);
+                    }
+                    if (node.Right != null)
+                    {
+                        queue.Enqueue(node.Right);
+                    }
+                }
+
+                result.Add(rightMost.Data);
+            }
+
+            return result;
+        }
     }
 }

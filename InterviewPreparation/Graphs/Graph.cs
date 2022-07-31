@@ -100,5 +100,95 @@ namespace DataStructures.Graphs
 
             return false;
         }
+
+        public int NumIslands(char[][] grid)
+        {
+            var seenOnes = new HashSet<(int, int)>();
+            var numIslands = 0;
+            var rows = grid.Length;
+            var cols = grid[0].Length;
+
+            for (var i = 0; i < rows; i++)
+            {
+                for (var j = 0; j < cols; j++)
+                {
+                    if (grid[i][j] == '0')
+                    {
+                        continue;
+                    }
+
+                    if (!seenOnes.Contains((i, j)))
+                    {
+                        numIslands++;
+                        seenOnes.Add((i, j));
+                        // check all touching cells
+                        NumIslandsHelper(grid, ref seenOnes, i, j, rows, cols);
+                    }
+                }
+            }
+
+            return numIslands;
+        }
+
+        private void NumIslandsHelper(char[][] grid, ref HashSet<(int, int)> seenOnes, int i, int j, int rows, int cols)
+        {
+            // check if up,down,left,right are valid pairs
+            // if valid, check if '1'
+            // if so, and not seen, add to seenOnes and check neighbors
+
+            // up
+            if (IsValidPair(rows, cols, i + 1, j))
+            {
+                if (grid[i + 1][j] == '1' && !seenOnes.Contains((i + 1, j)))
+                {
+                    seenOnes.Add((i + 1, j));
+                    NumIslandsHelper(grid, ref seenOnes, i + 1, j, rows, cols);
+                }
+            }
+
+            // down
+            if (IsValidPair(rows, cols, i - 1, j))
+            {
+                if (grid[i - 1][j] == '1' && !seenOnes.Contains((i - 1, j)))
+                {
+                    seenOnes.Add((i - 1, j));
+                    NumIslandsHelper(grid, ref seenOnes, i - 1, j, rows, cols);
+                }
+            }
+
+            // right
+            if (IsValidPair(rows, cols, i, j + 1))
+            {
+                if (grid[i][j + 1] == '1' && !seenOnes.Contains((i, j + 1)))
+                {
+                    seenOnes.Add((i, j + 1));
+                    NumIslandsHelper(grid, ref seenOnes, i, j + 1, rows, cols);
+                }
+            }
+
+            // left
+            if (IsValidPair(rows, cols, i, j - 1))
+            {
+                if (grid[i][j - 1] == '1' && !seenOnes.Contains((i, j - 1)))
+                {
+                    seenOnes.Add((i, j - 1));
+                    NumIslandsHelper(grid, ref seenOnes, i, j - 1, rows, cols);
+                }
+            }
+
+
+
+        }
+
+        private bool IsValidPair(int rows, int cols, int i, int j)
+        {
+            if ((i >= 0 && i < rows) &&
+                 (j >= 0 && j < cols))
+            {
+                return true;
+            }
+
+            return false;
+        }
     }
 }

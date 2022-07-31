@@ -17,8 +17,7 @@ namespace DataStructures.Two_Pointers
 
             var seenLetters = new HashSet<char>();
 
-            while (right < s.Length)
-            {
+            while (right < s.Length) {
                 if(!seenLetters.Contains(s[right]))
                 {
                     seenLetters.Add(s[right]);
@@ -27,16 +26,20 @@ namespace DataStructures.Two_Pointers
                     {
                         longestSub = seenLetters.Count;
                     }
-                } else {
-                    //if (seenLetters.Count > longestSub)
-                    //{
-                    //    longestSub = seenLetters.Count;
-                    //}
+                } 
+                else {
+                    //Find location of duplicate before current index
+                    var current = right-1;
+                    while (s[current] != s[right])
+                    {
+                        current--;
+                    }
 
                     seenLetters.Clear();
 
-                    left = right;
-                    seenLetters.Add(s[right]);
+                    left = current+1;
+                    right = left;
+                    seenLetters.Add(s[left]);
                 }
 
                 right++;

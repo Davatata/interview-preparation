@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32228.343
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructures", "InterviewPreparation\DataStructures.csproj", "{FCD8373E-0159-4848-A095-4945372D4D17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStructures", "InterviewPreparation\DataStructures.csproj", "{FCD8373E-0159-4848-A095-4945372D4D17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructures.Tests", "DataStructures.Tests\DataStructures.Tests.csproj", "{27EDAF54-84EC-41DF-9D57-58939F2D9A92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStructures.Tests", "DataStructures.Tests\DataStructures.Tests.csproj", "{27EDAF54-84EC-41DF-9D57-58939F2D9A92}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
