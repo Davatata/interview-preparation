@@ -4,6 +4,8 @@ namespace DataStructures.Sorting
 {
     public class Sorting
     {
+        // O(n^2) average and worst time
+        // O(1) memory
         public static void BubbleSort(int[] array)
         {
             bool isSorted = false;
@@ -21,14 +23,29 @@ namespace DataStructures.Sorting
             }
         }
 
-        private static void Swap(int[] array, int i, int j)
+        // O(n^2) average and worst case time
+        // O(1) memory
+        public static void SelectionSort(int[] array)
         {
-            int temp = array[i];
-            array[i] = array[j];
-            array[j] = temp;
+            for (var i = 0; i < array.Length - 1; i++)
+            {
+                var minIndex = i;
+                for (var j = i + 1; j< array.Length; j++)
+                {
+                    if (array[j] < array[minIndex])
+                    {
+                        minIndex = j;
+                    }
+                }
+
+                if (i != minIndex)
+                {
+                    Swap(array, minIndex, i);
+                }
+            }
         }
 
-        // O(n log n) time
+        // O(n log n) average and worst time
         // O(n) space
         public static void MergeSort(int[] array) 
         {
@@ -79,6 +96,8 @@ namespace DataStructures.Sorting
             QuickSort(array, 0, array.Length - 1);
         }
 
+        // O(n log n) average, O(n^2) worst
+        // O(log n) memory
         private static void QuickSort(int[] array, int left, int right)
         {
             if (left >= right)
@@ -113,6 +132,12 @@ namespace DataStructures.Sorting
                 }
             }
             return left;
+        }
+
+
+        private static void Swap(int[] array, int i, int j)
+        {
+            (array[j], array[i]) = (array[i], array[j]);
         }
     }
 }
